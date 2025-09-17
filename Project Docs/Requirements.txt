@@ -1,0 +1,45 @@
+# Zero-Cost AI Resume & Job Match Analyzer Requirements
+# No paid APIs, no compilation issues, pure Python libraries
+
+# Core Web Framework
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+python-multipart==0.0.6
+pydantic==2.5.0
+
+# Text Processing & NLP (lightweight, no compilation)
+nltk==3.8.1
+textblob==0.17.1
+spacy==3.7.2
+
+# Document Processing
+PyPDF2==3.0.1
+python-docx==1.1.0
+openpyxl==3.1.2
+
+# Mathematical Operations (pure Python alternatives)
+numpy==1.24.3
+pandas==2.0.3
+
+# Text Similarity (pure Python implementation)
+python-Levenshtein==0.21.1
+fuzzywuzzy==0.18.0
+
+# Web Requests for Free APIs
+requests==2.31.0
+httpx==0.25.0
+
+# Development & Testing
+pytest==7.4.3
+black==23.11.0
+flake8==6.1.0
+
+# Optional: For better text preprocessing
+unidecode==1.3.7
+regex==2023.10.3
+
+# For deployment
+gunicorn==21.2.0
+
+# Environment variables
+python-dotenv==1.0.0

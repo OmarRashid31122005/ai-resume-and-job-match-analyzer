@@ -1,0 +1,286 @@
+# AI Resume Analyzer - Complete Setup Guide
+## Step-by-Step Installation Instructions
+
+### 📋 Prerequisites
+
+#### 1. Node.js Installation
+**Windows:**
+1. Go to https://nodejs.org/
+2. Download the LTS version (recommended)
+3. Run the installer (.msi file)
+4. Follow the installation wizard
+5. Restart your computer
+6. Open Command Prompt and verify: `node --version`
+
+**Mac:**
+1. Go to https://nodejs.org/
+2. Download the LTS version
+3. Run the installer (.pkg file)
+4. Follow the installation steps
+5. Open Terminal and verify: `node --version`
+
+**Linux (Ubuntu/Debian):**
+```bash
+curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
+sudo apt-get install -y nodejs
+node --version
+```
+
+#### 2. Code Editor (Optional but Recommended)
+- **Visual Studio Code**: https://code.visualstudio.com/
+- **WebStorm**: https://www.jetbrains.com/webstorm/
+- **Sublime Text**: https://www.sublimetext.com/
+
+### 📁 Project Setup
+
+#### Step 1: Download the Project
+1. Download the project ZIP file
+2. Extract to your desired location
+3. Rename the folder to `ai-resume-analyzer` (if needed)
+
+#### Step 2: Open Terminal/Command Prompt
+**Windows:**
+- Press `Win + R`, type `cmd`, press Enter
+- Or search for "Command Prompt" in Start menu
+
+**Mac:**
+- Press `Cmd + Space`, type "Terminal", press Enter
+- Or go to Applications > Utilities > Terminal
+
+**Linux:**
+- Press `Ctrl + Alt + T`
+- Or search for "Terminal" in applications
+
+#### Step 3: Navigate to Project Directory
+```bash
+# Replace 'path/to/your/project' with actual path
+cd path/to/your/project/ai-resume-analyzer
+
+# Example paths:
+# Windows: cd C:\Users\YourName\Downloads\ai-resume-analyzer
+# Mac: cd ~/Downloads/ai-resume-analyzer
+# Linux: cd ~/Downloads/ai-resume-analyzer
+```
+
+#### Step 4: Verify Project Contents
+```bash
+# List files to ensure you're in the right directory
+ls        # Mac/Linux
+dir       # Windows
+
+# You should see files like:
+# package.json, src/, public/, etc.
+```
+
+### 🔧 Installation Process
+
+#### Step 1: Install Dependencies
+```bash
+npm install
+```
+
+**What this does:**
+- Downloads all required packages
+- Creates `node_modules` folder
+- Sets up the development environment
+- Takes 2-5 minutes depending on internet speed
+
+**If you see errors:**
+```bash
+# Clear npm cache and try again
+npm cache clean --force
+npm install
+```
+
+#### Step 2: Verify Installation
+```bash
+# Check if installation was successful
+npm list --depth=0
+```
+
+### 🚀 Running the Application
+
+#### Start Development Server
+```bash
+npm run dev
+```
+
+**Expected Output:**
+```
+  VITE v5.4.2  ready in 1234 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
+  ➜  press h + enter to show help
+```
+
+#### Open in Browser
+1. Open your web browser
+2. Go to: `http://localhost:5173`
+3. You should see the AI Resume Analyzer interface
+
+### 🔍 Troubleshooting
+
+#### Common Issues and Solutions
+
+**1. "npm: command not found"**
+- Node.js is not installed or not in PATH
+- Reinstall Node.js and restart terminal
+
+**2. "Permission denied" (Mac/Linux)**
+```bash
+sudo npm install
+# Or fix npm permissions:
+npm config set prefix ~/.npm-global
+export PATH=~/.npm-global/bin:$PATH
+```
+
+**3. "EACCES: permission denied" (Windows)**
+- Run Command Prompt as Administrator
+- Or use: `npm install --no-optional`
+
+**4. "Port 5173 is already in use"**
+```bash
+# Kill the process using the port
+npx kill-port 5173
+# Or use a different port
+npm run dev -- --port 3000
+```
+
+**5. "Module not found" errors**
+```bash
+# Delete node_modules and reinstall
+rm -rf node_modules package-lock.json  # Mac/Linux
+rmdir /s node_modules & del package-lock.json  # Windows
+npm install
+```
+
+**6. Build fails**
+```bash
+# Check Node.js version (should be 16+)
+node --version
+# Update if needed, then:
+npm run build
+```
+
+### 📱 Testing the Application
+
+#### 1. Upload Resume Test
+- Click "Choose File" or drag a resume
+- Supported formats: PDF, DOCX, DOC, TXT
+- File should upload successfully
+
+#### 2. Job Description Test
+- Paste a sample job description
+- Click "Analyze Resume"
+- Should show loading animation
+
+#### 3. Results Test
+- Wait for analysis to complete
+- Should display match score and detailed analysis
+- All tabs should be functional
+
+### 🛠️ Development Setup (Optional)
+
+#### Install Development Tools
+```bash
+# ESLint for code quality
+npm install -g eslint
+
+# TypeScript globally (optional)
+npm install -g typescript
+
+# Prettier for code formatting
+npm install -g prettier
+```
+
+#### VS Code Extensions (Recommended)
+1. ES7+ React/Redux/React-Native snippets
+2. TypeScript Importer
+3. Tailwind CSS IntelliSense
+4. Prettier - Code formatter
+5. ESLint
+
+### 🔧 Configuration Options
+
+#### Environment Variables (Optional)
+Create `.env` file in project root:
+```
+VITE_APP_NAME=AI Resume Analyzer
+VITE_APP_VERSION=1.0.0
+```
+
+#### Customization
+- **Colors**: Edit `tailwind.config.js`
+- **Skills Database**: Modify `src/services/api.ts`
+- **UI Components**: Update files in `src/components/`
+
+### 📊 Performance Optimization
+
+#### For Better Performance
+```bash
+# Build optimized version
+npm run build
+
+# Preview production build
+npm run preview
+```
+
+#### Memory Usage
+- Close other applications if running slowly
+- Use latest browser version
+- Clear browser cache if needed
+
+### 🔄 Updates and Maintenance
+
+#### Keep Dependencies Updated
+```bash
+# Check for updates
+npm outdated
+
+# Update packages
+npm update
+
+# Update npm itself
+npm install -g npm@latest
+```
+
+#### Backup Your Customizations
+- Save any custom changes before updating
+- Use version control (Git) for tracking changes
+
+### 📋 Verification Checklist
+
+✅ Node.js installed (version 16+)
+✅ Project downloaded and extracted
+✅ Terminal/Command Prompt opened
+✅ Navigated to project directory
+✅ Dependencies installed successfully
+✅ Development server starts without errors
+✅ Application opens in browser
+✅ File upload works
+✅ Analysis completes successfully
+✅ All UI components functional
+
+### 🆘 Getting Help
+
+#### If You're Still Having Issues:
+1. **Check Node.js version**: `node --version` (should be 16+)
+2. **Check npm version**: `npm --version`
+3. **Clear everything and start fresh**:
+   ```bash
+   rm -rf node_modules package-lock.json
+   npm cache clean --force
+   npm install
+   ```
+4. **Try different terminal**: Command Prompt, PowerShell, Git Bash
+5. **Check firewall/antivirus**: May block npm or development server
+
+#### System Requirements
+- **RAM**: 4GB minimum, 8GB recommended
+- **Storage**: 500MB free space
+- **Internet**: Required for initial setup only
+- **Browser**: Modern browser with JavaScript enabled
+
+### 🎉 Success!
+Once you see the AI Resume Analyzer interface in your browser, you're ready to start analyzing resumes! The application runs entirely in your browser with no external dependencies or API costs.

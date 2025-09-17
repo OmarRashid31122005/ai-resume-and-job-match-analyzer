@@ -1,0 +1,469 @@
+# AI Resume Analyzer - Complete Commands Reference
+## All Commands You'll Ever Need
+
+### 🚀 Essential Commands
+
+#### Project Setup
+```bash
+# Navigate to project directory
+cd ai-resume-analyzer
+
+# Install all dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Open browser to http://localhost:5173
+```
+
+#### Daily Development
+```bash
+# Start the application
+npm run dev
+
+# Stop the application
+# Press Ctrl+C in terminal
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
+```
+
+### 📦 Package Management
+
+#### Installing Dependencies
+```bash
+# Install all dependencies from package.json
+npm install
+
+# Install a specific package
+npm install package-name
+
+# Install as development dependency
+npm install --save-dev package-name
+
+# Install globally
+npm install -g package-name
+
+# Install specific version
+npm install package-name@1.2.3
+```
+
+#### Managing Dependencies
+```bash
+# List installed packages
+npm list
+
+# List only top-level packages
+npm list --depth=0
+
+# Check for outdated packages
+npm outdated
+
+# Update all packages
+npm update
+
+# Update specific package
+npm update package-name
+
+# Remove a package
+npm uninstall package-name
+```
+
+### 🔧 Development Commands
+
+#### Code Quality
+```bash
+# Run ESLint (code linting)
+npm run lint
+
+# Fix ESLint issues automatically
+npm run lint -- --fix
+
+# Check TypeScript types
+npx tsc --noEmit
+
+# Format code with Prettier
+npx prettier --write src/
+```
+
+#### Build Commands
+```bash
+# Development build
+npm run dev
+
+# Production build
+npm run build
+
+# Preview production build locally
+npm run preview
+
+# Build and preview
+npm run build && npm run preview
+```
+
+### 🐛 Troubleshooting Commands
+
+#### Clean Installation
+```bash
+# Remove node_modules and package-lock.json
+rm -rf node_modules package-lock.json    # Mac/Linux
+rmdir /s node_modules                     # Windows
+del package-lock.json                     # Windows
+
+# Clear npm cache
+npm cache clean --force
+
+# Fresh install
+npm install
+```
+
+#### Port Issues
+```bash
+# Kill process on port 5173
+npx kill-port 5173
+
+# Start on different port
+npm run dev -- --port 3000
+
+# Find what's using a port (Windows)
+netstat -ano | findstr :5173
+
+# Find what's using a port (Mac/Linux)
+lsof -i :5173
+```
+
+#### Memory and Performance
+```bash
+# Increase Node.js memory limit
+export NODE_OPTIONS="--max-old-space-size=4096"  # Mac/Linux
+set NODE_OPTIONS=--max-old-space-size=4096        # Windows
+
+# Clear system cache
+npm cache clean --force
+```
+
+### 🔍 Diagnostic Commands
+
+#### System Information
+```bash
+# Check Node.js version
+node --version
+node -v
+
+# Check npm version
+npm --version
+npm -v
+
+# Check system info
+npm config list
+
+# Check global packages
+npm list -g --depth=0
+```
+
+#### Project Information
+```bash
+# Show package.json scripts
+npm run
+
+# Show project dependencies
+npm list
+
+# Show dependency tree
+npm list --all
+
+# Check bundle size
+npm run build
+npx bundlesize
+```
+
+### 🌐 Network and Connectivity
+
+#### Network Issues
+```bash
+# Check npm registry
+npm config get registry
+
+# Set npm registry (if needed)
+npm config set registry https://registry.npmjs.org/
+
+# Test connectivity
+npm ping
+
+# Use different registry temporarily
+npm install --registry https://registry.npmjs.org/
+```
+
+#### Proxy Settings (if behind corporate firewall)
+```bash
+# Set proxy
+npm config set proxy http://proxy.company.com:8080
+npm config set https-proxy http://proxy.company.com:8080
+
+# Remove proxy
+npm config delete proxy
+npm config delete https-proxy
+```
+
+### 📁 File and Directory Commands
+
+#### Navigation
+```bash
+# Current directory
+pwd                    # Mac/Linux
+cd                     # Windows
+
+# List files
+ls                     # Mac/Linux
+dir                    # Windows
+
+# Change directory
+cd folder-name
+cd ..                  # Go up one level
+cd ~                   # Go to home directory (Mac/Linux)
+cd %USERPROFILE%       # Go to home directory (Windows)
+```
+
+#### File Operations
+```bash
+# Create file
+touch filename.txt     # Mac/Linux
+echo. > filename.txt   # Windows
+
+# Create directory
+mkdir folder-name
+
+# Copy files
+cp source dest         # Mac/Linux
+copy source dest       # Windows
+
+# Move/rename files
+mv old new             # Mac/Linux
+move old new           # Windows
+
+# Delete files
+rm filename            # Mac/Linux
+del filename           # Windows
+```
+
+### 🔄 Git Commands (Optional)
+
+#### Basic Git Setup
+```bash
+# Initialize git repository
+git init
+
+# Add all files
+git add .
+
+# Commit changes
+git commit -m "Initial commit"
+
+# Check status
+git status
+
+# View changes
+git diff
+```
+
+#### Branch Management
+```bash
+# Create new branch
+git checkout -b feature-name
+
+# Switch branches
+git checkout branch-name
+
+# List branches
+git branch
+
+# Merge branch
+git merge branch-name
+```
+
+### 🚀 Deployment Commands
+
+#### Build for Deployment
+```bash
+# Create production build
+npm run build
+
+# Test production build locally
+npm run preview
+
+# Check build size
+npm run build
+ls -la dist/           # Mac/Linux
+dir dist\              # Windows
+```
+
+#### Deployment Platforms
+```bash
+# Vercel deployment
+npx vercel
+
+# Netlify deployment
+npx netlify deploy
+
+# GitHub Pages (if configured)
+npm run deploy
+```
+
+### 🔧 Advanced Commands
+
+#### Performance Analysis
+```bash
+# Analyze bundle size
+npm run build
+npx webpack-bundle-analyzer dist/
+
+# Check for security vulnerabilities
+npm audit
+
+# Fix security issues
+npm audit fix
+```
+
+#### Environment Management
+```bash
+# Set environment variables (Mac/Linux)
+export NODE_ENV=production
+export VITE_API_URL=https://api.example.com
+
+# Set environment variables (Windows)
+set NODE_ENV=production
+set VITE_API_URL=https://api.example.com
+
+# Use .env file
+echo "VITE_APP_NAME=My App" > .env
+```
+
+### 📊 Monitoring Commands
+
+#### Development Monitoring
+```bash
+# Watch for file changes
+npm run dev
+
+# Build and watch
+npm run build -- --watch
+
+# Monitor memory usage
+node --inspect npm run dev
+```
+
+#### Log Analysis
+```bash
+# View npm logs
+npm config get cache
+# Then check _logs folder
+
+# Verbose output
+npm run dev --verbose
+
+# Debug mode
+DEBUG=* npm run dev
+```
+
+### 🆘 Emergency Commands
+
+#### Complete Reset
+```bash
+# Nuclear option - reset everything
+rm -rf node_modules package-lock.json .vite dist  # Mac/Linux
+rmdir /s node_modules dist .vite & del package-lock.json  # Windows
+npm cache clean --force
+npm install
+```
+
+#### Quick Fixes
+```bash
+# Fix common issues
+npm cache clean --force
+rm -rf node_modules package-lock.json
+npm install
+
+# Alternative package manager
+npx yarn install
+npx pnpm install
+```
+
+### 📋 Command Shortcuts
+
+#### Create Aliases (Optional)
+**Mac/Linux (.bashrc or .zshrc):**
+```bash
+alias nrd="npm run dev"
+alias nrb="npm run build"
+alias nrp="npm run preview"
+alias ni="npm install"
+alias nci="npm cache clean --force && npm install"
+```
+
+**Windows (PowerShell Profile):**
+```powershell
+function nrd { npm run dev }
+function nrb { npm run build }
+function nrp { npm run preview }
+function ni { npm install }
+```
+
+### 🎯 Most Used Commands Summary
+
+```bash
+# Daily workflow
+npm run dev          # Start development
+Ctrl+C              # Stop development
+npm run build       # Build for production
+npm run preview     # Test production build
+
+# Troubleshooting
+npm cache clean --force
+rm -rf node_modules package-lock.json
+npm install
+
+# Updates
+npm outdated
+npm update
+```
+
+### 📱 Platform-Specific Notes
+
+#### Windows Users
+- Use Command Prompt or PowerShell
+- Some commands may need Administrator privileges
+- Use `dir` instead of `ls`
+- Use `del` instead of `rm`
+
+#### Mac Users
+- Use Terminal
+- May need `sudo` for global installs
+- Homebrew can help with Node.js installation
+
+#### Linux Users
+- Use Terminal
+- May need `sudo` for global installs
+- Package managers vary by distribution
+
+### 🔍 Command Help
+
+#### Get Help for Any Command
+```bash
+# npm help
+npm help
+npm help install
+npm help run-script
+
+# Node.js help
+node --help
+
+# Command-specific help
+command --help
+command -h
+```
+
+This comprehensive command reference covers everything you'll need to develop, troubleshoot, and deploy your AI Resume Analyzer!
